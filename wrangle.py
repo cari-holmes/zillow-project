@@ -12,6 +12,7 @@ def wrangle_zillow():
     query='''
     SELECT bedroomcnt as bedroom, 
     bathroomcnt as bathroom, 
+    lotsizesquarefeet as lot_size,
     taxamount as tax_amount, 
     taxvaluedollarcnt as tax_value, 
     propertylandusetypeid as property_id, 
@@ -26,6 +27,7 @@ def wrangle_zillow():
     AND prop.bedroomcnt > 0
     AND prop.bathroomcnt > 0
     AND prop.taxvaluedollarcnt > 0
+    AND prop.lotsizesquarefeet > 0
     ORDER BY fips;
     '''
     df = pd.read_sql(query, get_db_url('zillow'))
