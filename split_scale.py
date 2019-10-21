@@ -2,8 +2,6 @@ import warnings
 warnings.filterwarnings("ignore")
 import pandas as pd 
 import numpy as np
-from wrangle import wrangle_zillow
-import env 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, QuantileTransformer, PowerTransformer, RobustScaler, MinMaxScaler
 
