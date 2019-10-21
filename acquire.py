@@ -3,6 +3,7 @@ warnings.filterwarnings('ignore')
 import pandas as pd
 import numpy as np
 from util import get_db_url
+from prep import clean_data
 
 def get_data_from_sql():
     query='''
@@ -28,16 +29,8 @@ def get_data_from_sql():
     return df 
 
 
-def clean_data(df):
-    df = df.dropna()
-    df['bedroom'] = df['bedroom'].astype(int)
-    df['fips'] = df['fips'].astype('int')
-    df['home_value'] = df['home_value'].astype(int)
-    df['square_feet'] = df['square_feet'].astype(int)
-
-    return df
-
 def acquire_zillow():
     df = get_data_from_sql()
     df = clean_data(df)
     return df 
+
