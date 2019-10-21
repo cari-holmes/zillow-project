@@ -49,3 +49,12 @@ def plot_regression(x,y):
     ax.plot(x, iv_l, 'b--',label='2.5% Confidence Level')
     ax.legend(loc='best');
     plt.show()
+
+
+def plot_linear_model(actuals, lm, baseline):
+    plot = pd.DataFrame({'actual': actuals,
+                'linear model': lm,
+                'baseline': baseline.flatten()})\
+    .melt(id_vars=['actual'], var_name='model', value_name='prediction')\
+    .pipe((sns.relplot, 'data'), x='actual', y='prediction', hue='model')
+    return plot
