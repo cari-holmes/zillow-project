@@ -5,6 +5,8 @@ import numpy as np
 from util import get_db_url
 from prep import clean_data
 
+# SQL query
+
 def get_data_from_sql():
     query='''
     SELECT bedroomcnt as bedroom, 
@@ -28,6 +30,8 @@ def get_data_from_sql():
     df = pd.read_sql(query, get_db_url('zillow'))
     return df 
 
+
+# Function to acquire clean SQL data
 
 def acquire_zillow():
     df = get_data_from_sql()
