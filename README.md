@@ -1,7 +1,6 @@
-# Zillow Project - Estimate Home Values
+# Estimate Home Values on Zillow
 
 ### Setup:
-
 
 Create env.py file with the following contents:
   - host = "Database IP Address"
@@ -23,3 +22,18 @@ Work through each step of the Data Science Pipeline using Linear Regression.
 - Exploration
 - Feature Selection
 - Modeling and Evaluation
+
+### Acquisition
+I gathered the data from a SQL database, joining tables as needed to meet all of the requirements necessary to answer my question and to have a dataframe ready to prepare.
+
+### Preparation
+I handled missing values, changed variables to the appropriate data type and more in a reproducible manner.
+
+### Exploration
+I ran statistical testing to find any correlation between my features and my target variable.
+
+### Feature Selection
+Based off of the statistical testing, I chose what features I wanted to add into my model.
+
+### Modeling
+I developed several sklearn linear regression models to find the one that best predicted home value.
